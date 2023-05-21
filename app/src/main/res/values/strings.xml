@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+
+    <string name="content_description_splash_image">Logo de Masiv</string>
+    <string name="content_description_empty_state_icon">Icono de advertencia</string>
+    <string name="content_description_create_task">Pantalla de creación de tarea</string>
+
+
+    <string name="empty_state_title">Ups! no tienes tareas creadas</string>
+    <string name="empty_state_description">Puedes empezar a crear tareas para tener control de tus
+        actividades</string>
+    <string name="create_task">Crear tarea</string>
+
+    <string name="task_title">Título de la tarea</string>
+    <string name="task_description">Descripción de la tarea</string>
+    <string name="select_task_image">Imagen de la tarea\n(Opcional)</string>
+
+    <string name="camera_permission_denied">La aplicación no tiene permisos para acceder a la cámara</string>
+    <string name="grant_permission">Conceder permiso</string>
+
+    <string name="camera_permission_required">Permiso de la cámara requerido</string>
+    <string name="this_feature_requires_camera_permission">"Esta funcionalidad requiere acceso a la cámara para ser ejecutada."</string>
+    <string name="configuration">Configuración</string>
+    <string name="cancel">Cancelar</string>
+    <string name="button_to_take_picture">Botón para tomar foto</string>
+    <string name="picture_optional">Foto (Opcional)</string>
+    <string name="button_to_remove_taken_picture">Botón para eliminar la foto tomada</string>
+    <string name="create">Crear</string>
+    <string name="description">Descripción*</string>
+    <string name="title">Título*</string>
+</resources>
