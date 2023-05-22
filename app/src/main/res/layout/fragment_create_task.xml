@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
         android:clipToPadding="false"
         android:paddingBottom="64dp">
 
@@ -122,14 +123,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:background="@null"
+            android:contentDescription="@string/button_to_remove_taken_picture"
             android:src="@drawable/ic_baseline_delete_24"
-            app:tint="@android:color/holo_red_dark"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/imageView_takePicture"
             app:layout_constraintStart_toEndOf="@+id/imageView_takePicture"
             app:layout_constraintTop_toTopOf="@+id/imageView_takePicture"
-            tools:visibility="visible"
-            android:contentDescription="@string/button_to_remove_taken_picture" />
+            app:tint="@android:color/holo_red_dark"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
