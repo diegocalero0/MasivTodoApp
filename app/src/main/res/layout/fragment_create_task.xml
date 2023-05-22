@@ -60,7 +60,7 @@
             android:ems="10"
             android:hint="@string/task_description"
             android:importantForAutofill="no"
-            android:inputType="textPersonName"
+            android:inputType="textMultiLine|textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/textView_taskDescription"
             app:layout_constraintStart_toStartOf="@+id/textView_taskDescription"
             app:layout_constraintTop_toBottomOf="@+id/textView_taskDescription" />
@@ -101,7 +101,7 @@
             app:tint="@color/white" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView_Preview"
+            android:id="@+id/imageView_preview"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="true"

@@ -1,23 +1,17 @@
 <resources>
     <string name="app_name">TodoApp</string>
-
     <string name="content_description_splash_image">Logo de Masiv</string>
     <string name="content_description_empty_state_icon">Icono de advertencia</string>
     <string name="content_description_create_task">Pantalla de creación de tarea</string>
-
-
     <string name="empty_state_title">Ups! no tienes tareas creadas</string>
     <string name="empty_state_description">Puedes empezar a crear tareas para tener control de tus
         actividades</string>
     <string name="create_task">Crear tarea</string>
-
     <string name="task_title">Título de la tarea</string>
     <string name="task_description">Descripción de la tarea</string>
     <string name="select_task_image">Imagen de la tarea\n(Opcional)</string>
-
     <string name="camera_permission_denied">La aplicación no tiene permisos para acceder a la cámara</string>
     <string name="grant_permission">Conceder permiso</string>
-
     <string name="camera_permission_required">Permiso de la cámara requerido</string>
     <string name="this_feature_requires_camera_permission">"Esta funcionalidad requiere acceso a la cámara para ser ejecutada."</string>
     <string name="configuration">Configuración</string>
@@ -28,4 +22,11 @@
     <string name="create">Crear</string>
     <string name="description">Descripción*</string>
     <string name="title">Título*</string>
+    <string name="button_to_create_new_task">Botón para crear una nueva tarea</string>
+    <string name="task_completed">Tarea completada</string>
+    <string name="error_updating_task">Ocurrió un error actualizando la tarea</string>
+    <string name="task_deleted">Tarea eliminada</string>
+    <string name="task_created">Tarea creada correctamente</string>
+    <string name="completed">Completada</string>
+    <string name="title_and_description_required">Por favor complete los campos obligatorios (Título y descripción)</string>
 </resources>

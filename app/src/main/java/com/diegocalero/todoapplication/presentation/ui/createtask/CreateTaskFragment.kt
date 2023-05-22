@@ -18,9 +18,11 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.diegocalero.todoapplication.R
 import com.diegocalero.todoapplication.databinding.FragmentCreateTaskBinding
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -29,6 +31,7 @@ import java.util.*
 /**
  * Fragment that represents the screen where the user will create the tasks
  */
+@AndroidEntryPoint
 class CreateTaskFragment : Fragment() {
 
     private lateinit var binding: FragmentCreateTaskBinding
@@ -61,7 +64,6 @@ class CreateTaskFragment : Fragment() {
             showSnackBarCameraPermissionNotAllowed()
         }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -103,7 +105,13 @@ class CreateTaskFragment : Fragment() {
             removeCurrentImage()
         }
         binding.buttonCreateTask.setOnClickListener {
-            viewModel.createTask()
+            if(viewModel.taskTitle.value.isNullOrBlank() || viewModel.taskDescription.value.isNullOrBlank()) {
+                val snackBar = Snackbar.make(binding.root, resources.getString(R.string.title_and_description_required), Snackbar.LENGTH_LONG)
+                snackBar.show()
+            } else {
+                viewModel.createTask()
+            }
+
         }
     }
 
@@ -122,6 +130,14 @@ class CreateTaskFragment : Fragment() {
                 binding.imageViewPreview.visibility = View.GONE
                 binding.imageViewTakePicture.visibility = View.VISIBLE
                 binding.imageButtonDeletePicture.visibility = View.GONE
+            }
+        }
+        viewModel.createTaskResult.observe(viewLifecycleOwner) {
+            it?.let {
+                val snackBar = Snackbar.make(binding.root, resources.getString(R.string.task_created), Snackbar.LENGTH_LONG)
+                snackBar.show()
+                viewModel.createTaskResult.postValue(null)
+                findNavController().popBackStack()
             }
         }
     }
