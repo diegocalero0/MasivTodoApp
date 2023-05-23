@@ -11,6 +11,8 @@ Los temas que se abarcan acá son:
 - - ViewModels
 - - Room Database
 - Unit Testing
+- La aplicación fue creada para también ser usable en modo noche
+
 
 ## Aclaración de requerimiento (Solicitud de permisos para almacenar datos)
 Uno de los requerimientos del proyecto era: "La aplicación debe solicitar permisos al usuario para acceder al almacenamiento del dispositivo y guardar

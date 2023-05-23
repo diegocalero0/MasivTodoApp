@@ -76,6 +76,13 @@ class CreateTaskFragment : Fragment() {
         binding.editTextTaskDescription.addTextChangedListener {
             viewModel.taskDescription.value = it.toString()
         }
+
+        if(!viewModel.imagePath.value.isNullOrBlank()) {
+            viewModel.imagePath.value?.let {
+                setImagePreviewImage(it)
+            }
+        }
+
         initClicks()
         initObservers()
         return binding.root
@@ -121,8 +128,7 @@ class CreateTaskFragment : Fragment() {
     private fun initObservers() {
         viewModel.imagePath.observe(viewLifecycleOwner) {
             if(it != null) {
-                val imageFile = File(it)
-                binding.imageViewPreview.setImageURI(Uri.fromFile(imageFile))
+                setImagePreviewImage(it)
                 binding.imageViewPreview.visibility = View.VISIBLE
                 binding.imageViewTakePicture.visibility = View.INVISIBLE
                 binding.imageButtonDeletePicture.visibility = View.VISIBLE
@@ -140,6 +146,14 @@ class CreateTaskFragment : Fragment() {
                 findNavController().popBackStack()
             }
         }
+    }
+
+    /**
+     * Method that sets the image preview
+     */
+    private fun setImagePreviewImage(path: String) {
+        val imageFile = File(path)
+        binding.imageViewPreview.setImageURI(Uri.fromFile(imageFile))
     }
 
     /**
